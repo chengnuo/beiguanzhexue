@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* 
+	@名称: base
+	@功能: 重设浏览器默认样式
+*/
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html{color:#000;background:#fff;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {margin:0;padding:0;}
+body{font:12px/1.5 Tahoma,"\5b8b\4f53",Arial,Helvetica,"\5fae\8f6f\96c5\9ed1",sans-serif;color:#333;}
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+audio,canvas,video {display:inline-block;*display:inline;*zoom:1;}
+ol,ul{list-style:none;}
+fieldset,img{border:0;}
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe{display:block;}
+/* 去掉 firefox 下此元素的边框 */
+abbr,acronym{border:0;font-variant:normal;}
+del{text-decoration:line-through;}
+address,caption,cite,code,dfn,em,i,th,var{font-style:normal;font-weight:500;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500;}
+/* 统一上标和下标 */
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}
+sup{top:-0.5em;}
+sub{bottom:-0.25em;}
+ins,a{text-decoration:none;outline:none;}
+a:hover{text-decoration:underline;}
+table{border-collapse:collapse;border-spacing:0;}
+/* IE bug fixed: th 不继承 text-align */
+th{text-align:inherit;}
+input,button,textarea,select{vertical-align:middle;}
+input[type="checkbox"]{width:13px;height:15px;}
+.clearfix:after {clear:both;display:block;height:0;font-size:0;content:".";visibility:hidden;}
+.clearfix{zoom:1;}
+.fl,.fr{display:inline;}
+.fl{float:left;}
+.fr{float:right;}
+
+.study{text-align:center;font-size:42px;background:#eee;padding:30px 0px 10px 0px;color:#ccc;border-bottom:1px dashed #fafafa;}

@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/index.css">
+	<script type="text/javascript" src='js/jquery-1.11.1.js'></script>
+	<script type="text/javascript" src='js/jquery.easing.1.3.js'></script>
+	<script type="text/javascript" src='js/jquery.mousewheel.js'></script>
+	<script type="text/javascript" src='js/move.js'></script>
+	<script type="text/javascript" src='js/index.js'></script>
+	<style type="text/css">
+
+
+
+	</style>
+</head>
+<body>
+	<img id='bgjpg' src='img/bgjpg.jpg'></img>
+	<header id='header'>
+		<nav id='nav'>
+			<h1 class="logo">
+				<a href="javascript:;">
+					<!--Welcome to my WWF-->
+				</a>
+			</h1>
+			<div id='bgscroll'>
+				<div class="bgSlider">
+					<!-- 背景滑动 -->
+				</div>
+				<ul id="navlist" class="navlist">
+					<li><a class="active" href="javascript:;">HOME</a></li>
+					<li><a href="javascript:;">About</a></li>
+					<li><a href="javascript:;">News</a></li>
+					<li><a href="javascript:;">wroks</a></li>
+					<li><a href="javascript:;">Photo</a></li>
+					<li><a href="javascript:;">hof</a></li>
+					<!-- <li><a href="javascript:;">contact</a></li> -->
+				</ul>
+				
+			</div>
+			<div>
+				更换背景
+			</div>
+		</nav>
+	</header>
+
+	<div id="content">
+		<section class='box'>
+			<article id='slider'>
+					<ul>
+				    	<li><img src='img/meishi1.jpg' alt=''></li>
+				    	<li><img src='img/meishi2.jpg' alt=''></li>
+				    	<li><img src='img/meishi3.jpg' alt=''></li>
+				    	<li><img src='img/meishi4.jpg' alt=''></li>
+				    	<li><img src='img/meishi5.jpg' alt=''></li>
+				    </ul>
+				    <ol>
+				    	<li><span>1</span></li>
+				        <li><span>2</span></li>
+				        <li><span>3</span></li>
+				        <li><span>4</span></li>
+				        <li><span>5</span></li>
+				    </ol>
+			</article>
+		</section>
+		<section class='box'>
+			
+
+			<div class="article">
+				<div class="content content-1" id="first">
+					<h1>The First</h1>
+					<img class="animg" src="img/p1.jpg" alt="" />
+					<p class="detailtitle">漫步苏州，品味婉约的苏式闲情</p>
+					<p class="detail">
+						幽幽江南，烟雨迷朦。漫步在苏州小巷，寻觅年华的乐章。那里有灯火跳动的雕花楼阁，也有小桥流水的淳朴人家。不经意间，推开一扇扇厚重的门，却是一家家普通的小店，或泡一壶茶、看一本闲书，或温一盅酒、听一曲雅调，亦能感受到超然世外的风情。浮光掠影，似曾相识的过往，让人迷惘在苏式慢调的生活里。
+					</p>
+				</div>
+			</div>
+
+			
+
+			<div class="section section-1">
+				<span class="span-1"></span>
+				<span class="span-2"></span>
+				<span class="span-3"></span>
+				<span class="span-4"></span>
+			</div>
+
+			<div class="section section-2">
+				<span class="span-1"></span>
+				<span class="span-2"></span>
+				<span class="span-3"></span>
+				<span class="span-4"></span>
+			</div>
+
+			<div class="section section-3">
+				<span class="span-1"></span>
+				<span class="span-2"></span>
+				<span class="span-3"></span>
+				<span class="span-4"></span>
+			</div>
+
+
+		</section>
+		<section class='box'>
+			<ul class="moveToggle" id='moveToggle'>
+				<li><img src="img/1.jpg"><span>猫一</span></li>
+			    <li><img src="img/2.jpg"><span>猫二</span></li>
+			    <li><img src="img/3.jpg"><span>猫三</span></li>
+			    <li><img src="img/4.jpg"><span>猫四</span></li>
+			    <li><img src="img/5.jpg"><span>猫五</span></li>
+			    <li><img src="img/6.jpg"><span>猫六</span></li>
+			    <li><img src="img/7.jpg"><span>猫七</span></li>
+			    <li><img src="img/8.jpg"><span>猫八</span></li>
+			    <li><img src="img/9.jpg"><span>猫九</span></li>
+			</ul>
+
+		</section>
+		<section class='box'>
+			
+			<input type="button" value="随机换位置" id="tupianbtn">
+			<ul id="dragimg">
+				<li><img src="img/1.jpg"></li>
+			    <li><img src="img/2.jpg"></li>
+			    <li><img src="img/3.jpg"></li>
+			    <li><img src="img/4.jpg"></li>
+			    <li><img src="img/5.jpg"></li>
+			    <li><img src="img/6.jpg"></li>
+			    <li><img src="img/7.jpg"></li>
+			    <li><img src="img/8.jpg"></li>
+			    <li><img src="img/9.jpg"></li>
+			</ul>
+
+		</section>
+		<section class='box'>
+			<input type="button" value="分页" id="pagebtn">
+			<ul id="listpage">
+				<li></li>
+			    <li></li>
+			    <li></li>
+			    <li></li>
+			    <li></li>
+			    <li></li>
+			    <li></li>
+			    <li></li>
+			    <li></li>
+			</ul>
+
+		</section>
+		<!-- <section class='box'>6</section> -->
+		<section class='box'>
+			<footer id='footer'>
+				<address>
+				<pre>
+				&lt;phone&gt;
+					手机：18813363888
+				&lt;/phone&gt;
+				&lt;qq&gt;
+					QQ：2585441871
+				&lt;/qq&gt;
+				</pre>
+				</address>
+					
+			</footer>
+		</section>
+	</div>
+
+
+</body>
+</html>
