@@ -1,0 +1,843 @@
+#player {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 99999;
+    bottom: 0
+}
+
+.playerSplice {
+    width: 100%;
+    height: 60px;
+    background: #000;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+#playerBox {
+    width: 100%;
+    position: relative;
+    z-index: 111
+}
+
+#player .player {
+    width: 1200px;
+    height: 60px;
+    margin: 0 auto
+}
+
+.open {
+    width: 56px;
+    height: 19px;
+    background: url(http://image.kuwo.cn/website/pc/icon.png) -105px -81px;
+    position: absolute;
+    right: 20px;
+    top: -19px;
+    cursor: pointer;
+    z-index: 1111
+}
+
+.lock {
+    background-position: -161px -81px
+}
+
+.playerLeft {
+    float: left;
+    width: 280px;
+    height: 60px
+}
+
+.musicControll {
+    float: left;
+    margin-left: 24px;
+    display: inline
+}
+
+.musicControll div {
+    float: left;
+    margin: 10px 0 0 17px;
+    cursor: pointer;
+    display: inline
+}
+
+.musicControll .prev,
+.musicControll .next,
+.musicControll .play,
+.musicControll .zan {
+    width: 30px;
+    height: 30px;
+    background: url(http://image.kuwo.cn/website/pc/icon.png)
+}
+
+.musicControll .prev {
+    background-position: -77px -118px;
+    margin-top: 15px
+}
+
+.musicControll .play {
+    width: 40px;
+    height: 40px;
+    background-position: -137px -113px
+}
+
+
+.musicControll .jp-pause {
+    background-position: -138px -194px;
+}
+.musicControll .zan {
+    width: 40px;
+    height: 40px;
+    background-position: -138px -194px
+}
+
+.musicControll .next {
+    background-position: -207px -118px;
+    margin-top: 15px
+}
+
+.musicControll .prev:hover {
+    background-position: -77px -157px
+}
+
+
+
+.musicControll .zan:hover {
+    background-position: -179px -194px
+}
+
+.musicControll .next:hover {
+    background-position: -207px -158px
+}
+
+.musicControll .play:hover {
+    background-position: -137px -153px
+}
+.musicControll .jp-pause:hover {
+    background-position: -179px -194px
+}
+.playerLeft img {
+    float: left;
+    width: 40px !important;
+    height: 40px !important;
+    margin: 10px 0 0 50px;
+    display: inline
+}
+
+.playerMid {
+    float: left;
+    width: 440px;
+    height: 60px;
+    overflow: hidden;
+    position: relative
+}
+
+.playerMid #wp_text {
+    font-size: 14px;
+    color: #fff;
+    margin-top: 9px;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.playerMid #wp_text span {
+    color: #999
+}
+
+.playerMid #prograssBar {
+    float: left;
+    position: relative;
+    width: 100%;
+    height: 4px;
+    background: url(http://image.kuwo.cn/website/pc/prograssBg.png);
+    margin: 10px 10px 0 0;
+    display: inline
+}
+
+.playerMid .prograssBar {
+    width: 0;
+    height: 4px;
+    background: #ffcd2d
+}
+
+.playerMid #wp_bufBar {
+    width: 0;
+    height: 4px;
+    background: url(http://image.kuwo.cn/website/pc/prograssBg.png)
+}
+
+.playerMid #wp_processBtn {
+    width: 10px;
+    height: 10px;
+    background: url(http://image.kuwo.cn/website/pc/icon.png) 0 -128px;
+    position: absolute;
+    top: -3px
+}
+
+.playerRight {
+    float: left;
+    width: 480px;
+    height: 60px
+}
+
+#wp_playTime {
+    float: left;
+    margin: 33px 0 0 14px;
+    font-size: 12px;
+    color: #fff;
+    display: inline
+}
+
+#pinzhi {
+    float: left;
+    position: relative;
+    margin: 20px 43px 0 40px;
+    display: inline
+}
+
+#pinzhi .changePz {
+    display: block;
+    width: 48px;
+    height: 20px;
+    background: url(http://image.kuwo.cn/website/pc/icon.png) -53px -88px;
+    text-indent: -9999em
+}
+
+#pinzhi .changePz:hover {
+    background-position: 0 -88px
+}
+
+#controllBtn {
+    float: left;
+    height: 60px;
+    position: relative
+}
+
+#controllBtn div {
+    float: left
+}
+
+#controllBtn .kSong {
+    float: left;
+    width: 17px;
+    height: 19px;
+    display: block;
+    background: url(http://image.kuwo.cn/website/pc/icon.png) no-repeat -24px -38px;
+    margin: 19px 26px 0 0;
+    display: inline
+}
+
+#controllBtn .kSong:hover {
+    background-position: -24px -63px
+}
+
+#controllBtn .menu {
+    float: left;
+    width: 20px;
+    height: 18px;
+    background: url(http://image.kuwo.cn/website/pc/icon.png) no-repeat -71px -38px;
+    margin: 19px 43px 0 0;
+    cursor: pointer;
+    display: inline
+}
+
+#controllBtn .menu:hover {
+    background-position: -71px -63px
+}
+
+#controllBtn .down {
+    float: left;
+    width: 20px;
+    height: 21px;
+    display: block;
+    background: url(http://image.kuwo.cn/website/pc/icon.png) no-repeat -242px -113px;
+    margin: 17px 23px 0 0;
+    display: inline
+}
+
+#controllBtn .down:hover {
+    background-position: -242px -137px
+}
+
+#controllBtn .share {
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: url(http://image.kuwo.cn/website/pc/icon.png) no-repeat -46px -38px;
+    margin: 18px 24px 0 0;
+    position: relative;
+    z-index: 111;
+    display: inline;
+    cursor: pointer
+}
+
+#controllBtn .share:hover {
+    background-position: -46px -63px
+}
+
+#controllBtn .ewm {
+    float: left;
+    width: 19px;
+    height: 19px;
+    background: url(http://image.kuwo.cn/website/pc/icon.png) no-repeat 0 -38px;
+    margin-top: 18px;
+    display: inline;
+    position: relative;
+    z-index: 111;
+    cursor: pointer
+}
+
+#controllBtn .ewm:hover {
+    background-position: 0 -63px
+}
+
+#controllBtn #mode {
+    float: left;
+    display: block;
+    width: 28px;
+    height: 20px;
+    position: relative;
+    margin: 18px 19px 0 0
+}
+
+#controllBtn .loop {
+    background: url(http://image.kuwo.cn/website/pc/icon.png) no-repeat -15px -172px
+}
+
+#controllBtn .loop:hover {
+    background-position: -44px -172px
+}
+
+#controllBtn .single {
+    background: url(http://image.kuwo.cn/website/pc/icon.png) no-repeat -18px -142px;
+    left: 4px
+}
+
+#controllBtn .single:hover {
+    background-position: -47px -142px
+}
+
+#controllBtn .order {
+    background: url(http://image.kuwo.cn/website/pc/icon.png) no-repeat -19px -113px;
+    
+}
+#controllBtn .order-off {
+    background: url(http://image.kuwo.cn/website/pc/icon.png) no-repeat;
+    background-position: -48px -113px;
+    
+}
+/*
+#controllBtn .order:hover {
+    background-position: -48px -113px
+}
+*/
+
+#controllBtn .random {
+    background: url(http://image.kuwo.cn/website/pc/icon.png) no-repeat -19px -203px;
+    
+}
+#controllBtn .random-off {
+    background: url(http://image.kuwo.cn/website/pc/icon.png) no-repeat;
+    background-position: -48px -203px;
+
+}
+/*
+#controllBtn .random:hover {
+    background-position: -48px -203px
+}
+*/
+#wp_mute {
+    position: relative;
+    width: 20px;
+    height: 16px;
+    background: url(http://image.kuwo.cn/website/pc/icon.png) no-repeat -263px -113px;
+    margin: 21px 22px 0 0;
+    z-index: 13
+}
+
+#controllBtn .hovered {
+    background-position: -263px -129px
+}
+
+#controllBtn .sound_img_2 {
+    background-position: -309px -129px
+}
+
+#controllBtn .sound_img_2:hover {
+    background-position: -309px -113px
+}
+
+#controllBtn #soundBox {
+    position: absolute;
+    top: -164px;
+    left: -10px;
+    width: 40px;
+    height: 138px;
+    background: url(http://image.kuwo.cn/website/pc/volumeBg.png);
+    display: none
+}
+
+#controllBtn #soundBox .soundBox #soundPro {
+    width: 4px;
+    height: 100px;
+    background: url(http://image.kuwo.cn/website/pc/prograssBg.png) repeat;
+    top: 15px;
+    left: 18px;
+    position: relative
+}
+
+#controllBtn #soundBox .soundBox #soundPro .soundPro {
+    width: 4px;
+    height: 100px;
+    background: #ffcd2d;
+    position: absolute;
+    bottom: 0
+}
+
+#controllBtn #soundBox .soundBox #soundPro #wp_volBtn {
+    width: 10px;
+    height: 10px;
+    background: url(http://image.kuwo.cn/website/pc/icon.png) 0 -128px;
+    position: absolute;
+    left: -3px
+}
+
+#addTips {
+    background: url(http://image.kuwo.cn/website/pc/jiao.png) bottom no-repeat;
+    position: absolute;
+    left: 81px;
+    top: -43px;
+    padding-bottom: 8px;
+    display: none;
+    z-index: 999
+}
+
+#addTips p {
+    line-height: 30px;
+    background: #000;
+    padding: 0 10px;
+    color: #fff
+}
+
+#playList {
+    width: 100%;
+    position: absolute;
+    top: -304px;
+    height: 0;
+    visibility: hidden
+}
+
+#playListBox {
+    width: 1200px;
+    height: 304px;
+    margin: 0 auto;
+    background: #202020;
+    overflow: hidden;
+    position: relative
+}
+
+#playListBox .splice {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1200px;
+    height: 304px;
+    background: #202020;
+    z-index: 11
+}
+
+#playCon {
+    width: 1200px;
+    height: 304px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 12
+}
+
+#lrc {
+    float: left;
+    position: relative
+}
+
+#lrc .splice,
+#lrcName {
+    width: 500px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(http://image.kuwo.cn/website/pc/lrcTitle.png)
+}
+
+#lrcName {
+    background: 0;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: 14px;
+    z-index: 11
+}
+
+#lrcConId {
+    float: left;
+    margin: 55px 0 0 130px;
+    display: inline;
+    color: #fff;
+    overflow: hidden;
+}
+
+.border {
+    float: right;
+    width: 8px;
+    height: 254px;
+    margin-top: 50px;
+    background: #000
+}
+
+#musicList {
+    float: right;
+    position: relative;
+    width: 700px;
+    height: 304px
+}
+
+#musicList .splice,
+.listNum {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    width: 700px;
+    height: 50px
+}
+
+#musicList .listNum {
+    background: 0;
+    color: #fff;
+    text-indent: 40px;
+    line-height: 50px;
+    font-size: 14px;
+    z-index: 11
+}
+
+.listNum p {
+    float: left;
+    color: #fff
+}
+
+.listNum span {
+    float: right;
+    width: 12px;
+    height: 12px;
+    background: url(http://image.kuwo.cn/website/pc/icon.png) -87px 0;
+    margin: 19px 22px 0 0;
+    cursor: pointer;
+    display: inline
+}
+
+.musicList {
+    height: 254px;
+    top: 50px;
+    position: relative;
+    left: 0
+}
+
+.musicList li {
+    float: left;
+    width: 700px;
+    color: #949494;
+    overflow: hidden
+}
+
+.musicList li:hover {
+    background: url(http://image.kuwo.cn/website/pc/currentBg.png) repeat;
+    color: #e0e0e0
+}
+
+.musicList li:hover .name a {
+    color: #e0e0e0
+}
+
+.musicList .current {
+    background: url(http://image.kuwo.cn/website/pc/currentBg.png) repeat;
+    color: #e0e0e0
+}
+.musicList .jp-playlist-current{
+    background: url(http://image.kuwo.cn/website/pc/currentBg.png) repeat;
+    color: #e0e0e0
+}
+
+.musicList .current a {
+    color: #fff
+}
+
+.musicList li div {
+    /*float: left;*/
+    height: 30px;
+    line-height: 30px;
+    padding: 0 40px;
+}
+
+.musicList li a {
+    color: #949494
+}
+
+.musicInfo {
+    margin-left: 40px
+}
+
+.musicInfo .name {
+    width: 224px;
+    margin-right: 40px
+}
+
+.musicInfo .name a {
+    width: 224px;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.musicInfo .album {
+    width: 92px;
+    margin-right: 50px;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.musicInfo .artist {
+    width: 80px;
+    margin-right: 40px;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.listRight {
+    position: relative;
+    width: 126px
+}
+
+.listRight .musicTools {
+    width: 91px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 1px
+}
+
+.listRight .musicTools a {
+    float: left;
+    display: block
+}
+
+.musicTools .down {
+    width: 13px;
+    height: 14px;
+    background: url(http://image.kuwo.cn/website/pc/icon.png) -51px 0;
+    margin: 8px 13px 0 0
+}
+
+.musicTools .share {
+    width: 13px;
+    height: 13px;
+    background: url(http://image.kuwo.cn/website/pc/icon.png) -69px 0;
+    margin: 9px 15px 0 0;
+    position: relative;
+    z-index: 999;
+    cursor: pointer
+}
+
+.musicTools .ksong {
+    width: 10px;
+    height: 12px;
+    background: url(http://image.kuwo.cn/website/pc/icon.png) -36px 0;
+    margin: 10px 15px 0 0
+}
+
+.musicTools .delete {
+    width: 12px;
+    height: 12px;
+    background: url(http://image.kuwo.cn/website/pc/icon.png) -19px 0;
+    margin-top: 9px
+}
+
+.scrollbar {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+#mCSB_1_dragger_vertical .mCSB_dragger_bar {
+    width: 8px;
+    background: #fff;
+    filter: alpha(opacity=20);
+    -moz-opacity: .2;
+    -khtml-opacity: .2;
+    opacity: .2
+}
+
+#mCSB_1_scrollbar_vertical .mCSB_draggerRail {
+    width: 8px;
+    background: #000;
+    *background: 0;
+    filter: alpha(opacity=40);
+    -moz-opacity: .4;
+    -khtml-opacity: .4;
+    opacity: .4
+}
+
+#mCSB_1_scrollbar_vertical {
+    left: 688px
+}
+
+.shareBox {
+    height: 83px;
+    position: absolute;
+    top: -81px;
+    left: -60px;
+    background: url(http://image.kuwo.cn/website/pc/jiao.png) no-repeat center 50px;
+    display: none
+}
+
+.sharecontent {
+    width: 138px;
+    height: 50px;
+    background: #000
+}
+
+.sharecontent a {
+    width: 18px;
+    height: 18px;
+    margin: 16px 0 0 8px;
+    background: url(http://image.kuwo.cn/website/pc/icon.png) no-repeat;
+    float: left
+}
+
+.sharecontent .new_sina {
+    background-position: -219px -196px
+}
+
+.sharecontent .new_qzone {
+    background-position: -242px -196px
+}
+
+.sharecontent .new_tqq {
+    background-position: -265px -196px
+}
+
+.sharecontent .new_douban {
+    background-position: -288px -196px
+}
+
+.sharecontent .new_renren {
+    background-position: -311px -196px
+}
+
+.new_sina:hover {
+    background-position: -219px -216px
+}
+
+.new_qzone:hover {
+    background-position: -242px -216px
+}
+
+.new_tqq:hover {
+    background-position: -265px -216px
+}
+
+.new_douban:hover {
+    background-position: -288px -216px
+}
+
+.new_renren:hover {
+    background-position: -311px -216px
+}
+
+.musicList .shareBox {
+    top: -9px;
+    left: -150px
+}
+
+.musicList .shareBox .sharecontent {
+    width: 150px;
+    background: #333
+}
+
+.musicList .shareBox a {
+    margin: 6px 0 0 10px
+}
+
+.ewmBox {
+    height: 162px;
+    position: absolute;
+    top: -185px;
+    left: -68px;
+    background: url(http://image.kuwo.cn/website/pc/jiao.png) no-repeat bottom;
+    display: none
+}
+
+.ewmCon {
+    padding: 5px;
+    background: #000
+}
+
+.jp-jplayer{
+	width:auto !important;
+	height:auto !important;
+}
+#lrc_list .hover{
+    color: #ffcd2d;
+}
+
+div.jp-playlist span.jp-free-media {
+    float: right;
+    display: inline;
+    text-align: right;
+    margin-right: 10px;
+}
+#wp_mute:hover {
+    background-position: -263px -129px;
+}
+
+.demo-description {
+    clear: both;
+    padding: 12px;
+    font-size: 1.3em;
+    line-height: 1.4em;
+}
+
+.ui-draggable, .ui-droppable {
+    background-position: top;
+}
+
+
+/*
+.jp-toggles{
+    position: relative;
+    top:-40px;
+}
+*/
+
+.jp-toggles{
+    float: left;
+    margin-top: 20px;
+    word-spacing: 0;
+}
+.jp-toggles li{
+    float: left;
+}
+.jp-toggles a{
+    color: #fff;
+    width:28px;
+    height: 20px;
+    display: inline-block;
+    word-spacing: -6px;
+}

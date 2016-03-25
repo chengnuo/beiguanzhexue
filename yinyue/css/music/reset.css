@@ -1,0 +1,463 @@
+﻿/**
+ * YUI 3.5.0 - reset.css (http://developer.yahoo.com/yui/3/cssreset/)
+ * http://cssreset.com
+ * Copyright 2012 Yahoo! Inc. All rights reserved.
+ * http://yuilibrary.com/license/
+ */
+/*
+	TODO will need to remove settings on HTML since we can't namespace it.
+	TODO with the prefix, should I group by selector or property for weight savings?
+*/
+html{
+	color:#000;
+	/*background:#FFF;*/
+}
+body{
+	font: 14px/1.5 '\5FAE\8F6F\96C5\9ED1', Arial, Helvetica, sans-serif;
+	color:#000;
+}
+a{
+	text-decoration: none;
+	outline: 0;
+	color: #000;
+}
+a:hover {
+    color: #1d78d5;
+}
+/*
+	TODO remove settings on BODY since we can't namespace it.
+*/
+/*
+	TODO test putting a class on HEAD.
+		- Fails on FF.
+*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,
+img {
+	border:0;
+}
+/*
+	TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+*/
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+	font-style:normal;
+	font-weight:normal;
+}
+ 
+ol,
+ul {
+	list-style:none;
+}
+ 
+caption,
+th {
+	text-align:left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+q:before,
+q:after {
+	content:'';
+}
+abbr,
+acronym {
+	border:0;
+	font-variant:normal;
+}
+/* to preserve line-height and selector appearance */
+sup {
+	vertical-align:text-top;
+}
+sub {
+	vertical-align:text-bottom;
+}
+input,
+textarea,
+select {
+	font-family:inherit;
+	font-size:inherit;
+	font-weight:inherit;
+}
+/*to enable resizing for IE*/
+input,
+textarea,
+select {
+	*font-size:100%;
+}
+/*because legend doesn't inherit in IE */
+legend {
+	color:#000;
+}
+/* YUI CSS Detection Stamp */
+#yui3-css-stamp.cssreset { display: none; }
+
+/*清除浮动*/
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+.clearfix{*zoom:1;}
+/*清除浮动 end*/
+
+/*省略号*/
+.ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+/*省略号 end*/
+
+.fl{
+	float: left;
+	display: inline;
+}
+.fr{
+	float: right;
+	display: inline;
+}
+/*margin*/
+/*左*/
+.ml10{
+	margin-left:10px;
+}
+.ml20{
+	margin-left:20px;
+}
+.ml30{
+	margin-left:30px;
+}
+.ml40{
+	margin-left:40px;
+}
+.ml50{
+	margin-left:50px;
+}
+.ml60{
+	margin-left:60px;
+}
+.ml70{
+	margin-left:70px;
+}
+.ml80{
+	margin-left:80px;
+}
+.ml90{
+	margin-left:90px;
+}
+.ml100{
+	margin-left:100px;
+}
+/*左end*/
+/*上*/
+.mt10{
+	margin-top:10px;
+}
+.mt20{
+	margin-top:20px;
+}
+.mt30{
+	margin-top:30px;
+}
+.mt40{
+	margin-top:40px;
+}
+.mt50{
+	margin-top:50px;
+}
+.mt60{
+	margin-top:60px;
+}
+.mt70{
+	margin-top:70px;
+}
+.mt80{
+	margin-top:80px;
+}
+.mt90{
+	margin-top:90px;
+}
+.mt100{
+	margin-top:100px;
+}
+/*上end*/
+/*右*/
+.mr10{
+	margin-right:10px;
+}
+.mr20{
+	margin-right:20px;
+}
+.mr30{
+	margin-right:30px;
+}
+.mr40{
+	margin-right:40px;
+}
+.mr50{
+	margin-right:50px;
+}
+.mr60{
+	margin-right:60px;
+}
+.mr70{
+	margin-right:70px;
+}
+.mr80{
+	margin-right:80px;
+}
+.mr90{
+	margin-right:90px;
+}
+.mr100{
+	margin-right:100px;
+}
+/*右end*/
+/*margin*/
+
+
+
+
+/*padding*/
+/*左*/
+.pl10{
+	padding-left:10px;
+}
+.pl20{
+	padding-left:20px;
+}
+.pl30{
+	padding-left:30px;
+}
+.pl40{
+	padding-left:40px;
+}
+.pl50{
+	padding-left:50px;
+}
+.pl60{
+	padding-left:60px;
+}
+.pl70{
+	padding-left:70px;
+}
+.pl80{
+	padding-left:80px;
+}
+.pl90{
+	padding-left:90px;
+}
+.pl100{
+	padding-left:100px;
+}
+/*左end*/
+/*上*/
+.pt10{
+	padding-top:10px;
+}
+.pt20{
+	padding-top:20px;
+}
+.pt30{
+	padding-top:30px;
+}
+.pt40{
+	padding-top:40px;
+}
+.pt50{
+	padding-top:50px;
+}
+.pt60{
+	padding-top:60px;
+}
+.pt70{
+	padding-top:70px;
+}
+.pt80{
+	padding-top:80px;
+}
+.pt90{
+	padding-top:90px;
+}
+.pt100{
+	padding-top:100px;
+}
+/*上end*/
+/*右*/
+.pr10{
+	padding-right:10px;
+}
+.pr20{
+	padding-right:20px;
+}
+.pr30{
+	padding-right:30px;
+}
+.pr40{
+	padding-right:40px;
+}
+.pr50{
+	padding-right:50px;
+}
+.pr60{
+	padding-right:60px;
+}
+.pr70{
+	padding-right:70px;
+}
+.pr80{
+	padding-right:80px;
+}
+.pr90{
+	padding-right:90px;
+}
+.pr100{
+	padding-right:100px;
+}
+/*右end*/
+/*padding*/
+
+
+
+/*position*/
+.static{
+	position: static;
+}
+.relative{
+	position: relative;
+}
+.absolute{
+	position: absolute;
+}
+.fixed{
+	position: fixed;
+}
+/*position end*/
+
+/*align*/
+.align-top{
+	text-align: top;
+}
+.align-center{
+	text-align: center;
+}
+.align-bottom{
+	text-align: bottom;
+}
+/*align end*/
+
+/*vertical-align: */
+.vertical-top{
+	vertical-align: top;
+}
+.vertical-middle{
+	vertical-align: middle;
+}
+.vertical-bottom{
+	vertical-align: bottom;
+}
+/*vertical-align:end */
+
+/*wdbtn*/
+/*
+a{
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+*/
+.wdbtn{
+	height:40px;
+    line-height:40px;
+    padding:0 12px;
+    font-size:14px;
+    margin-left:20px;
+    text-decoration:none;
+	color:#fff;
+}
+.ibtn1{
+	background:#ffaa00;
+	color:#fff;
+}
+.ibtn1:hover{
+	background:#ea8c00;
+	color:#fff;
+}
+.ibtn1:active{
+	background:#ccc;
+	color:#fff;
+}
+
+.ibtn2{
+	background: #ff5e62;
+	color:#fff;
+}
+.ibtn2:hover{
+	background:#DA4447;
+	color:#fff;
+}
+.ibtn2:active{
+	background:#ccc;
+	color:#fff;
+}
+/*wdbtn*/
+i,em{
+	font-style: normal;
+}
+.content1200{
+	width: 1200px;
+	margin: 0 auto;
+}
+.content1000{
+	width: 1000px;
+	margin: 0 auto;
+}

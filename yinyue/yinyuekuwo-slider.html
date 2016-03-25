@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/music/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/music/player.css">
+    <link rel="stylesheet" type="text/css" href="css/music/xiaoma-music.css">
+    <!--
+    <link rel="stylesheet" type="text/css" href="http://www.sxjytxw.com/music/css/qfWhygaf.css">
+    -->
+    <link rel="stylesheet" type="text/css" href="css/music/jquery-ui.css">
+
+    <script type="text/javascript" src="js/jquery-1.10.2-min.js"></script>
+    <script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="js/jquery.jplayer.inspector.min.js"></script>
+    <script type="text/javascript" src="js/jplayer.playlist.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/lrc.js"></script>
+    <script type="text/javascript" src="js/xiaoma-music2.js"></script>
+</head>
+
+<body >
+<div id="jplayer-add">
+    添加听说爱情回来过
+</div>
+
+<!-- 播放器开始 -->
+<div id="player" class="music-player" style="bottom: 0px;">
+    <div class="playerSplice opacity95"></div>
+    <div id="playerBox">
+        <div class="player">
+            <div class="open lock"></div>
+            <div class="playerLeft">
+                <div class="musicControll">
+                    <div class="prev jp-previous" id="wp_playPreBtn" title="上一首"></div>
+                    <div class="play jp-play" id="wp_playBtn" title="暂停/播放"></div>
+                    <div class="play jp-pause" title="暂停/播放" style="display:none;"></div>
+                    <div class="next jp-next" id="wp_playNextBtn" title="下一首"></div>
+                </div>
+                <!-- ****单曲图片 -->
+                <div id="jquery_jplayer" class="jp-jplayer"></div>
+                <!-- ****单曲图片 end -->
+                <!--
+                <img id="artist_Image" src="http://image.kuwo.cn/website/pc/default/50-50.jpg" onerror="imgOnError(this,'50')">
+                -->
+            </div>
+            <div class="playerMid">
+                <p id="wp_text" title="听音乐  用酷我">听音乐 来小马</p>
+                
+                <!--
+                <div id="prograssBar">
+                    <div id="wp_bufBar" style="width: 0px;">
+                        <div class="prograssBar" id="wp_processBar" style="width: 0px;"></div>
+                        <a href="javascript:;" class="schedule_btn" id="wp_processBtn" style="left: 0"></a>
+                    </div>
+                </div>
+                -->
+                <!-- ****滚动条  -->
+                <!--
+                <div id="prograssBar">
+                    <div class="progress jp-seek-bar" id="wp_bufBar">
+                        <div class="jp-play-bar prograssBar" style="width: 0%"></div>
+                        
+                        <a href="javascript:;" class="schedule_btn" id="wp_processBtn" style="left: 0"></a>
+                        
+                    </div>
+                </div>
+                -->
+                <!-- 滚动条 end -->
+
+                
+
+
+                <!--进度条开始 -->
+                <!--
+                <div id="progressSlider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"  style="float:left;width:100%" >
+                   <div class="ui-slider-progressbar jp-seek-bar" style="width:0%">
+                        <div class="ui-slider-left"></div>
+                        <div class="ui-slider-right"></div>
+                        <div class="ui-slider-range ui-widget-header ui-slider-range-min jp-play-bar" style="width:0%">
+                           <span class="ui-slider-range-inner"></span>
+                       </div> 
+                       <div id="progreeBar" style="width: 100%;"></div>
+                   </div>
+                </div>
+                -->
+                <!--进度条结束 -->
+                <div class="jp-progress-slider"></div>
+
+
+
+            </div>
+            <div class="playerRight">
+                <p id="wp_playTime" class="jp-current-time opacity">00:00</p>
+                <div id="pinzhi">
+                    <a class="changePz" href="javascript:;">流畅</a>
+                </div>
+                <div id="controllBtn">
+                    <div class="sound" id="wp_mute">
+                        <div id="soundBox">
+                            <div class="soundBox">
+                                <div id="soundPro" class="jp-volume-bar">
+                                    <!--<div class="soundPro" id="wp_volBar"></div>-->
+                                    <!--<a href="javascript:;" id="wp_volBtn"></a>-->
+                                    <!-- ****声音大小控制 -->
+                                        
+                                        <!--
+                                        <a href="javascript:;" id="wp_volBtn" style="top: 48px;"></a>
+                                        -->
+                                        <!--
+                                        <div class="soundPro jp-volume-bar-value"></div>
+                                        -->
+                                        <div class="jp-volume-slider"></div>
+                                    
+                                    <!-- ****声音大小控制 end -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <a class="loop jp-repeat" id="mode" href="javascript:;" title="顺序循环"></a> -->
+                    <!--
+                    <a class="loop" id="mode" href="javascript:;" title="顺序循环"></a>
+                    -->
+
+                    <ul class="jp-toggles">
+                        <li>
+                            <a href="javascript:;" class="order jp-repeat" tabindex="1" title="循环播放"></a>
+                            </li>
+                        <li>
+                            <a href="javascript:;" class="order-off jp-repeat-off" tabindex="1" title="循环播放"></a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="random jp-shuffle" tabindex="1" title="随机"></a>
+                            </li>
+                        <li>
+                            <a href="javascript:;" class="random-off jp-shuffle-off" tabindex="1" title="随机"></a>
+                        </li>
+                    </ul>
+
+                    <!-- 
+                    <ul class="jp-toggles">
+                    
+                        设置循环的初始状态
+                        <li>
+                            <a href="javascript:;" class="loop" tabindex="1" title="设置循环的初始状态">设置循环的初始状态</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="jp-loop-off" tabindex="1" title="设置循环的初始状态">设置循环的初始状态</a>
+                        </li>
+                    
+                    
+                        单曲循环
+                        <li>
+                            <a href="javascript:;" class="jp-repeat" tabindex="1" title="单曲循环">
+                                单曲循环
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="jp-repeat-off" tabindex="1" title="shuffle off">     单曲循环 off
+                            </a>
+                        </li>
+                    
+                        洗牌
+                        <li>
+                            <a href="javascript:;" class="jp-shuffle" tabindex="1" title="洗牌">
+                                洗牌
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off">     shuffle off
+                            </a>
+                        </li>
+                    
+                    
+                        <li>
+                            <a href="javascript:;" class="jp-interface" tabindex="1" title="随机播放">
+                                随机播放
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="jp-interface-off" tabindex="1" title="随机播放">
+                                随机播放
+                            </a>
+                        </li>
+                    
+                    </ul> -->
+
+                    <!--
+                    <ul class="jp-toggles">
+                        <li>
+                            <a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a>
+                            </li>
+                        <li>
+                            <a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle
+                            off</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="jp-repeat" tabindex="1" title="单曲循环">单曲循环</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="jp-repeat-off" tabindex="1" title="关闭单曲循环">关闭单曲循环</a>
+                        </li>
+                    </ul>
+                    -->
+                    
+
+                    <a class="kSong" title="k歌" onclick="picLog('www2016_2_kge')" target="_blank" href="javascript:;"></a>
+                    <div class="menu" title="列表"></div>
+                    <a class="down click_log" data-click="playlist_player_bar" title="下载" href="javascript:;"></a>
+                    <div class="share" title="分享">
+                        <div class="shareBox" style="display: none;">
+                            <div class="sharecontent">
+                                <a href="javascript:;" class="quickShare new_sina" data-cmd="tsina" title="分享到新浪微博"></a>
+                                <a href="javascript:;" class="quickShare new_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                                <a href="javascript:;" class="quickShare new_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+                                <a href="javascript:;" class="quickShare new_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+                                <a href="javascript:;" class="quickShare new_renren" data-cmd="renren" title="分享到人人网"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="ewm" title="二维码">
+                        <div class="ewmBox">
+                            <div class="ewmCon">
+                                <img width="144" src="http://image.kuwo.cn/website/pc/ewm.png">
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                    <div id="addTips">
+                        <p>已添加至播放列表</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 播放列表开始 -->
+        <div id="playList" style="visibility: visible;">
+            <div id="playListBox">
+                <img class="blur" src="http://image.kuwo.cn/www2016/listBoxBg.jpg">
+                <div class="splice opacity90"></div>
+                <div id="playCon">
+                    <!-- 歌词 -->
+                    <div id="lrc">
+                        <div class="splice"></div>
+                        <p id="lrcName" title="听音乐 来小马">听音乐 来小马</p>
+                        <div id="lrcConId">
+                            <ul id="lrc_list"></ul>
+                        </div>
+                    </div>
+                    <!-- 列表 -->
+                    <div id="musicList">
+                        <div class="splice opacity30"></div>
+                        <div class="listNum">
+                            <p>播放列表(2)</p>
+                            <span title="关闭"></span>
+                        </div>
+
+                        <!-- **** -->
+                        <div class="jp-playlist musicList scrollbar mCustomScrollbar _mCS_1 mCS_no_scrollbar">
+                            <ul><li></li></ul>
+                        </div>
+                        <!-- ****end -->
+                        <!--
+                        <ul class="musicList scrollbar mCustomScrollbar _mCS_1 mCS_no_scrollbar">
+                            <div id="mCSB_1" class="mCustomScrollBox mCS-light-3 mCSB_vertical mCSB_inside" tabindex="0" style="max-height: none;">
+                                <div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                    
+                                    <li id="plMUSIC_6984193" data-pay="0">
+                                        <div class="musicInfo">
+                                            <div class="name"><a href="javascript:wb_playSong('MUSIC_6984193','中国姑娘','金志文','0');" title="中国姑娘">中国姑娘</a></div>
+                                            <div class="album" title="中国姑娘(单曲)">中国姑娘(单曲)</div>
+                                            <div class="artist" title="金志文">金志文</div>
+                                        </div>
+                                        <div class="listRight">
+                                            <div class="musicTools">
+                                                <a class="down click_log" data-click="playlist_player_listen" title="下载" href="javascript:down('playlist');"></a>
+                                                <div class="share" title="分享">
+                                                    <div class="shareBox">
+                                                        <div class="sharecontent">
+                                                            <a href="javascript:;" class="quickShare new_sina" data-cmd="tsina" title="分享到新浪微博"></a>
+                                                            <a href="javascript:;" class="quickShare new_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                                                            <a href="javascript:;" class="quickShare new_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+                                                            <a href="javascript:;" class="quickShare new_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+                                                            <a href="javascript:;" class="quickShare new_renren" data-cmd="renren" title="分享到人人网"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="ksong" title="k歌" onclick="picLog('www2016_2_kge')" target="_blank" href="javascript:;"></a>
+                                                <a title="删除" class="delete" href="javascript:delPlSong('MUSIC_6984193');"></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    <li id="plMUSIC_6987974" data-pay="0">
+                                        <div class="musicInfo">
+                                            <div class="name"><a href="javascript:wb_playSong('MUSIC_6987974','月光','许魏洲','0');" title="月光">月光</a></div>
+                                            <div class="album" title="月光">月光</div>
+                                            <div class="artist" title="许魏洲">许魏洲</div>
+                                        </div>
+                                        <div class="listRight">
+                                            <div class="musicTools">
+                                                <a class="down click_log" data-click="playlist_player_listen" title="下载" href="javascript:down('playlist');"></a>
+                                                <div class="share" title="分享">
+                                                    <div class="shareBox">
+                                                        <div class="sharecontent">
+                                                            <a href="javascript:;" class="quickShare new_sina" data-cmd="tsina" title="分享到新浪微博"></a>
+                                                            <a href="javascript:;" class="quickShare new_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                                                            <a href="javascript:;" class="quickShare new_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+                                                            <a href="javascript:;" class="quickShare new_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+                                                            <a href="javascript:;" class="quickShare new_renren" data-cmd="renren" title="分享到人人网"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="ksong" title="k歌" onclick="picLog('www2016_2_kge')" target="_blank" href="javascript:;"></a>
+                                                <a title="删除" class="delete" href="javascript:delPlSong('MUSIC_6987974');"></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light-3 mCSB_scrollTools_vertical" style="display: none;">
+                                    <div class="mCSB_draggerContainer">
+                                        <div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; top: 0px; height: 0px;" oncontextmenu="return false;">
+                                            <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
+                                        </div>
+                                        <div class="mCSB_draggerRail"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ul>
+                        -->
+                    </div>
+                    <div class="border opacity40"></div>
+                    <!-- 列表结束 -->
+                </div>
+            </div>
+        </div>
+        <!-- 播放列表结束 -->
+    </div>
+    
+
+    <!-- 我添加的 -->
+    <!--
+    <div id="jquery_jplayer" class="jp-jplayer"></div>
+    -->
+    <!-- 我添加的end -->
+
+</div>
+<!-- 播放器end -->
+
+
+
+
+
+</body>
+
+</html>
