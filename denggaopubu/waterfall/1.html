@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+  
+  <body>
+    <div class="">
+      <!--header-->
+      <header id="header">
+        <div class="avatar">
+          <a href="/about">
+            <img src="images/me.jpg" alt="me-info">
+          </a>
+        </div>
+        <div>
+          <h1 id="blog-name">
+            <a href="/">陈小轩の自留地</a>
+           </h1>
+        </div>
+        <div role="navigation">
+          <ul class="list-inline">
+            <li>
+              <a href="/photos">相册</a>
+            </li>
+            <li>
+              <a href="/article">文字</a>
+            </li>
+            <li>
+              <a href="/rss">rss</a>
+            </li>
+            <li>
+              <a class="search-trigger">搜索</a>
+              <!--TODO:search-->
+              <!--<form>
+              <input type="text">
+            </form>-->
+            </li>
+          </ul>
+        </div>
+      </header>
+      <!--main-->
+      <main class="wrapper">
+        <!--all-post-->
+        
+<div class="photo-lst center-block">
+  </div>
+
+      </main>
+      <!--footer-->
+      <footer id="footer"></footer>
+      <script src="js/jquery-2.1.4.min.js"></script>
+      
+
+<script src="js/template.js"></script>
+
+
+<script id="t1" type="text/html">
+  {{each pins as pin index}}
+    <div class="photo-wrap">
+      <image src="{{pin.src}}"  width="{{pin.width}}" height="{{pin.height}}"/>
+    </div>
+  {{/each}}
+</script>
+
+<script>
+  var gap = 16,
+    colWidth = 236,
+    colNum = 5;
+
+
+  var WaterFall = function (container) {
+    this.itemSelector = ".photo-wrap";
+    this.$container = $(container);
+    this.lastPins = [];  //最多保存colNum个
+    this.pinCount = 0;
+    this.template = '<div class="photo-wrap">'+
+                      '<img src="/resource/images/1.jpg" alt="" width="236">'+
+                    '</div>';
+    this.init();
+  }
+
+
+  WaterFall.prototype = {
+      construct: WaterFall,
+
+      init: function () {
+        this.setContainerW();
+      },
+
+      setContainerW: function () {
+        var $container = this.$container;
+        var width = colWidth * colNum + (colNum - 1) * gap;
+        $container.css({
+          position: "relative"
+        });
+        $container.width(width + "px");
+      },
+
+
+    
+      //从shortset中获得最高pin，和最低pin
+      //最低pin用来appendPin
+      //最高pin用来设置容器高度
+    
+      offsetHeight: function($pin){
+          return $pin.position().top+$pin.height()+20;  
+      },
+    
+      getLowPin: function(){
+        var lastPins = this.lastPins;
+        var j = lastPins.length;
+        
+        var lPin = lastPins[0];
+        var minOffsetH = this.offsetHeight(lPin);
+        var offsetH;
+        
+        for(var i=1; i < j; i++ ){
+          offsetH = this.offsetHeight(lastPins[i]);
+          if(offsetH < minOffsetH){
+            lPin = lastPins[i];
+            minOffsetH = offsetH;
+          }
+        }
+        
+        return lPin;
+
+      },
+    
+      getHightPin: function(){
+        var lastPins = this.lastPins;
+        var j = lastPins.length;
+        
+        if(j === 0){
+          return null;
+        }
+        
+        var HPin = lastPins[0];
+        var maxOffsetH = this.offsetHeight(HPin);
+        var offsetH;
+        
+        for(var i=1; i < j; i++ ){
+          offsetH = this.offsetHeight(lastPins[i]);
+          if(offsetH > maxOffsetH){
+            HPin = lastPins[i];
+            maxOffsetH = offsetH;
+          }
+        }
+        
+        return HPin;
+        
+      },
+    
+      setContainerH: function(){
+        var pin = this.getHightPin();
+        
+        if(!pin){
+          return null;
+        }
+        var height = this.offsetHeight(pin);
+        
+        this.$container.height(height);
+        
+        return height;
+      },
+
+    
+
+      //追加单个pin
+      _appendPin: function($pin){
+        
+        var top = 0;
+        var left = 0;
+        
+        this.pinCount += 1;
+        
+        var $container= this.$container;
+        
+        if(this.pinCount <= colNum){   //第一行没有lowPin
+          left = (colWidth+gap)*(this.pinCount-1);
+          top = 0;
+        }else{
+          var lPin = this.getLowPin();
+          left = lPin.position().left;
+          top = this.offsetHeight(lPin);
+          
+          
+        }
+        this.appendTolastPins($pin, lPin);
+        
+        
+        $pin.css({
+          position: "absolute",
+          left: left,
+          top: top,
+        });
+        
+        this.$container.append($pin);
+      },
+    
+      //追加pin
+      appendPins: function($pins){
+        var self = this;
+        $pins.each(function(index, ele){
+          self._appendPin($(ele));
+        });
+        
+        
+        this.setContainerH();
+      },
+      
+      
+
+
+      //加入shorSet，超过colNum，shift出一个；
+      appendTolastPins: function ($pin, lowPin) {
+        var shortSet = this.lastPins;
+        if (shortSet.length === colNum) {
+          var index = shortSet.indexOf(lowPin);
+          shortSet[index] = $pin;
+        }else{
+          shortSet.push($pin);
+        }
+      },
+
+
+    }
+
+
+
+  $.fn.extend({
+    waterFall: function () {
+     return new WaterFall(this);
+    }
+  });
+  
+  var data = {
+    pins: [
+      {
+        src:"images/1.jpg",
+        width: 236,
+        height: 190
+      },
+      {
+        src:"images/16.jpg",
+        width: 236,
+        height: 100
+      },
+      {
+        src:"images/12.jpg",
+        width: 236,
+        height: 220
+      },
+      {
+        src:"images/14.jpg",
+        width: 236,
+        height: 220
+      },
+      {
+        src:"images/15.jpg",
+        width: 236,
+        height: 130
+      },
+      {
+        src:"images/17.jpg",
+        width: 236,
+        height: 210
+      },
+      {
+        src:"images/1.jpg",
+        width: 236,
+        height: 150
+      },
+      {
+        src:"images/11.jpg",
+        width: 236,
+        height: 220
+      },
+      {
+        src:"images/1.jpg",
+        width: 236,
+        height: 220
+      },
+      {
+        src:"images/1.jpg",
+        width: 236,
+        height: 220
+      },
+      {
+        src:"images/1.jpg",
+        width: 236,
+        height: 220
+      }
+    ]
+  };
+  
+
+
+  
+  
+  
+  
+  
+window.onload = function(){
+  var waterFall = $(".photo-lst").waterFall();
+  
+  var html = template('t1', data);
+  var $pins = $(html).filter(waterFall.itemSelector)
+  
+  waterFall.appendPins($pins);
+}
+</script>
+
+  </body>
+
+</html>

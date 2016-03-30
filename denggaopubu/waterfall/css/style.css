@@ -1,0 +1,10 @@
+body{border-top:4px solid #000;border-bottom:4px solid #000}
+.w970{padding:50px 0;max-width:970px;margin:0 auto}
+#header{text-align:center}
+.avatar a{display:inline-block}
+.avatar img{width:100px;height:100px;border-radius:50px}
+#blog-name{margin:50px 0 20px 0}
+.wrapper{margin-top:50px;margin-bottom:50px}
+.wrapper:after,.wrapper:before{content:"";display:table}
+.wrapper:after{clear:both}
+.posts-box{max-width:750px;margin:0 auto}

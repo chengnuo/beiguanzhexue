@@ -1,0 +1,7 @@
+1.打开chrome developerTool,点击Network
+2.刷新页面
+3.右击“copy All as HAR",保存到文件，以.json结尾
+4.运行脚本
+5.所有资源将保存在wwwwe文件夹下
+
+Note:python版本为2系列，下载py2版本

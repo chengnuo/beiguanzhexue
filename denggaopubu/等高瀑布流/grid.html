@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 900px;
+      margin: 0 auto;
+    }
+    
+    .clearfix:before,.clearfix:after{
+      content: "";
+      display: table;
+    }
+    .clearfix:after{
+      clear:both;
+    }
+    
+    a {
+      float: left;
+    }
+    
+    img {
+      vertical-align: bottom;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>等高布局</h1>
+  <div class="container clearfix">
+    <a href="#0"><img src="images/1.webp" alt="">
+    </a>
+    <a href="#0"><img src="images/2.webp" alt="">
+    </a>
+    <a href="#0"><img src="images/3.webp" alt="">
+    </a>
+    <a href="#0"><img src="images/4.webp" alt="">
+    </a>
+    <a href="#0"><img src="images/5.webp" alt="">
+    </a>
+    <a href="#0"><img src="images/6.webp" alt="">
+    </a>
+    <a href="#0"><img src="images/7.webp" alt="">
+    </a>
+    <a href="#0"><img src="images/8.webp" alt="">
+    </a>
+    <a href="#0"><img src="images/9.webp" alt="">
+    </a>
+    <a href="#0"><img src="images/10.webp" alt="">
+    </a>
+    <a href="#0"><img src="images/11.webp" alt="">
+    </a>
+    <a href="#0"><img src="images/12.webp" alt="">
+    </a>
+  </div>
+
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script>
+    //原理:http://isux.tencent.com/high-equal-response-layout-html.html
+    //TODO:
+    //1.增加gap
+    //？自适应？
+    //1.容器宽度；
+    var $container = $('.container');
+    var containerW = $container.width();
+
+    var $items = $container.find("img"); //所有item
+
+    
+    
+    //=========wrapper row
+    var rowWidth = 0;
+    var rowWrapper = '<div class="img-row clearfix"></div>'
+
+    
+    var wrapperStart = 0;
+    var wrapperEnd = 0;
+
+    
+    $items.each(function (index, ele) {
+      rowWidth += $(ele).width();
+      if (rowWidth > containerW) {
+        wrapperEnd = index+1;
+        var $rowItems = $items.slice(wrapperStart, wrapperEnd);  //one row
+        scale($rowItems);
+        $rowItems.parent().wrapAll(rowWrapper);
+        wrapperStart = wrapperEnd ;
+        rowWidth = 0;
+      }
+
+    });
+    
+    
+    
+    //动作：调整
+    function scale($rowItems){
+      var standard = getLowHeight($rowItems);   //以当前行最小高度item为基准；
+      var newWidth = adjustToStan($rowItems, standard);
+      var ratio = newWidth/containerW;
+      adjustByRatio($rowItems, ratio);
+    }
+    
+    function getLowHeight($rowItems){
+      var result = Infinity;
+      var height;
+      
+      $rowItems.each(function(index, ele){
+        height = $(ele).height()
+        if(height < result ){
+          result = height;
+        }
+      });
+      
+      return height;
+    }
+    
+    function adjustToStan($rowItems, standard){
+      //以standard 调整所有item
+      var $image ;
+      var width=0;
+      $rowItems.each(function(index, ele){
+        $image = $(ele);
+        $image.height(standard);
+        width += $image.width();
+      });
+      return width;
+    }
+    
+    function adjustByRatio($rowItems, ratio){
+      //以ratio调整所有item
+      //ratio = 总宽度/容器宽度 ＝ 图片原始宽度/新宽度
+      var $item;
+      $rowItems.each(function(index, ele){
+        $item = $(ele);
+        $item.width( $item.width()/ratio);
+      });
+    }
+    
+  </script>
+</body>
+
+</html>
