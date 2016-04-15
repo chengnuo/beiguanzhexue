@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <!--
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    -->
+    <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    ul,
+    li {
+        list-style: none;
+    }
+    
+    body {
+        font: 12px/20px "Microsoft Yahei", "SimSun", Arial, sans-serif;
+        background: #CCC;
+    }
+    /* heartPic */
+    
+    .heartPic {
+        width: 749px;
+        height: 630px;
+    }
+    
+    .heartPic ul {
+        float: left;
+        width: 749px;
+    }
+    
+    .heartPic ul li {
+        float: left;
+
+        perspective: 500px; /*For 3d*/
+    }
+    
+    .heartPic ul li.on {
+        position: relative;
+        z-index: 99;
+    }
+    
+
+
+    
+  
+    /*
+    
+    .heartPic.heartPicAnimate ul:nth-child(1) li:nth-child(2) .in{
+       -webkit-animation:.3s heartPicAnimate 0.1s forwards;
+       animation:.3s heartPicAnimate 0.1s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(1) li:nth-child(3) .in{
+       -webkit-animation:.3s heartPicAnimate .15s forwards;
+       animation:.3s heartPicAnimate .15s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(1) li:nth-child(5) .in{
+       -webkit-animation:.3s heartPicAnimate .2s forwards;
+       animation:.3s heartPicAnimate .2s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(1) li:nth-child(6) .in{
+       -webkit-animation:.3s heartPicAnimate .25s forwards;
+       animation:.3s heartPicAnimate .25s forwards;
+    }
+
+
+    .heartPic.heartPicAnimate ul:nth-child(2) li:nth-child(1) .in{
+       -webkit-animation:.3s heartPicAnimate .3s forwards;
+       animation:.3s heartPicAnimate .3s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(2) li:nth-child(2) .in{
+       -webkit-animation:.3s heartPicAnimate .35s forwards;
+       animation:.3s heartPicAnimate .35s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(2) li:nth-child(3) .in{
+       -webkit-animation:.3s heartPicAnimate .4s forwards;
+       animation:.3s heartPicAnimate .4s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(2) li:nth-child(4) .in{
+       -webkit-animation:.3s heartPicAnimate .45s forwards;
+       animation:.3s heartPicAnimate .45s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(2) li:nth-child(5) .in{
+       -webkit-animation:.3s heartPicAnimate .5s forwards;
+       animation:.3s heartPicAnimate .5s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(2) li:nth-child(6) .in{
+       -webkit-animation:.3s heartPicAnimate .55s forwards;
+       animation:.3s heartPicAnimate .55s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(2) li:nth-child(7) .in{
+       -webkit-animation:.3s heartPicAnimate .6s forwards;
+       animation:.3s heartPicAnimate .6s forwards;
+    }
+
+
+    .heartPic.heartPicAnimate ul:nth-child(3) li:nth-child(1) .in{
+       -webkit-animation:.3s heartPicAnimate .65s forwards;
+       animation:.3s heartPicAnimate .65s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(3) li:nth-child(2) .in{
+       -webkit-animation:.3s heartPicAnimate .7s forwards;
+       animation:.3s heartPicAnimate .7s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(3) li:nth-child(3) .in{
+       -webkit-animation:.3s heartPicAnimate .75s forwards;
+       animation:.3s heartPicAnimate .75s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(3) li:nth-child(4) .in{
+       -webkit-animation:.3s heartPicAnimate .8s forwards;
+       animation:.3s heartPicAnimate .8s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(3) li:nth-child(5) .in{
+       -webkit-animation:.3s heartPicAnimate .85s forwards;
+       animation:.3s heartPicAnimate .85s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(3) li:nth-child(6) .in{
+       -webkit-animation:.3s heartPicAnimate .9s forwards;
+       animation:.3s heartPicAnimate .9s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(3) li:nth-child(7) .in{
+       -webkit-animation:.3s heartPicAnimate .95s forwards;
+       animation:.3s heartPicAnimate .95s forwards;
+    }
+
+
+    .heartPic.heartPicAnimate ul:nth-child(4) li:nth-child(2) .in{
+       -webkit-animation:.3s heartPicAnimate 1s forwards;
+       animation:.3s heartPicAnimate 1s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(4) li:nth-child(3) .in{
+       -webkit-animation:.3s heartPicAnimate 1.05s forwards;
+       animation:.3s heartPicAnimate 1.05s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(4) li:nth-child(4) .in{
+       -webkit-animation:.3s heartPicAnimate 1.1s forwards;
+       animation:.3s heartPicAnimate 1.1s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(4) li:nth-child(5) .in{
+       -webkit-animation:.3s heartPicAnimate 1.15s forwards;
+       animation:.3s heartPicAnimate 1.15s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(4) li:nth-child(6) .in{
+       -webkit-animation:.3s heartPicAnimate 1.2s forwards;
+       animation:.3s heartPicAnimate 1.2s forwards;
+    }
+
+
+    .heartPic.heartPicAnimate ul:nth-child(5) li:nth-child(3) .in{
+       -webkit-animation:.3s heartPicAnimate 1.25s forwards;
+       animation:.3s heartPicAnimate 1.25s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(5) li:nth-child(4) .in{
+       -webkit-animation:.3s heartPicAnimate 1.3s forwards;
+       animation:.3s heartPicAnimate 1.3s forwards;
+    }
+    .heartPic.heartPicAnimate ul:nth-child(5) li:nth-child(5) .in{
+       -webkit-animation:.3s heartPicAnimate 1.35s forwards;
+       animation:.3s heartPicAnimate 1.35s forwards;
+    }
+
+    .heartPic.heartPicAnimate ul:nth-child(6) li:nth-child(4) .in{
+       -webkit-animation:.3s heartPicAnimate 1.4s forwards;
+       animation:.3s heartPicAnimate 1.4s forwards;
+    }
+
+    
+
+    
+    @-webkit-keyframes heartPicAnimate{
+        0%{ 
+            opacity: 0;
+        }
+        100%{ 
+            opacity: 1;
+        }
+    }
+    @keyframes heartPicAnimate{
+        0%{ 
+            opacity: 0;
+            -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+            -o-transform: scale(0);
+            transform: scale(0);
+            
+
+        }
+        100%{ 
+            opacity: 1;
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform: scale(1); 
+        }
+    }
+
+
+    @-webkit-keyframes heartPicBorderAnimate{
+        0%{ 
+            border:1px solid #fff;
+        }
+        100%{ 
+            border:0px solid #fff;
+        }
+    }
+    @keyframes heartPicBorderAnimate{
+        0%{ 
+            border:1px solid #fff;
+        }
+        100%{ 
+            border:0px solid #fff;
+        }
+    }
+    */
+    
+
+    .animate {
+        text-transform: uppercase;
+        background: rgb(0, 100, 0); color: white;
+        padding: 10px 20px; border-radius: 5px;
+        cursor: pointer;margin:10px auto;width:100px;text-align:center;
+    }
+    .animate:hover {background: rgb(0, 75, 0);}
+    .grid {
+        width: 600px; height: 300px; 
+        perspective: 500px; /*For 3d*/
+    }
+    .grid ul li{
+        width: 100px;
+        height: 100px;
+    }
+    .grid img {width: 100px; height: 100px; display: block; float: left;}
+
+    .gridCols{
+        width:749px;
+    }
+    .gridCols>div{
+        width: 100px;
+        height: 100px;
+        float: left;
+    }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="animate">点击看效果</div>
+
+    <div class="grid">
+        <div class="gridCols">
+            <div></div>
+            <div class="in">
+                <img src="img/index_01.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_02.jpg"  />
+            </div>
+            <div></div>
+            <div class="in">
+                <img src="img/index_03.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_04.jpg"  />
+            </div>
+            <div></div>
+        </div>
+        <div class="gridCols">
+            <div class="in">
+                <img src="img/index_05.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_06.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_07.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_08.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_09.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_10.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_11.jpg"  />
+            </div>
+        </div>
+        <div class="gridCols">
+            <div class="in">
+                <img src="img/index_12.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_13.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_14.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_15.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_16.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_17.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_18.jpg"  />
+            </div>
+        </div>
+        <div class="gridCols">
+            <div></div>
+            <div class="in">
+                <img src="img/index_19.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_20.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_21.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_22.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_23.jpg"  />
+            </div>
+            <div></div>
+        </div>
+        <div class="gridCols">
+            <div></div>
+            <div></div>
+            <div class="in">
+                <img src="img/index_24.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_25.jpg"  />
+            </div>
+            <div class="in">
+                <img src="img/index_26.jpg"  />
+            </div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="gridCols">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="in">
+                <img src="img/index_27.jpg"  />
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <div class="heartPic heartPicAnimate grid">
+        <div>
+            <div class="in">
+                <img width="100" height="100" src="img/index_27.jpg"  />
+            </div>
+        </div>
+    </div>
+
+
+    <div class="grid">
+        <img width="100" height="100" src="img/index_27.jpg" style="opacity: 1; transform: rotateY(0deg) translateZ(0px);" />
+        <img width="100" height="100" src="img/index_27.jpg" style="opacity: 1; transform: rotateY(0deg) translateZ(0px);" />
+        <img width="100" height="100" src="img/index_27.jpg" style="opacity: 1; transform: rotateY(0deg) translateZ(0px);" />
+        <img width="100" height="100" src="img/index_27.jpg" style="opacity: 1; transform: rotateY(0deg) translateZ(0px);" />
+        <img width="100" height="100" src="img/index_27.jpg" style="opacity: 1; transform: rotateY(0deg) translateZ(0px);" />
+        <img width="100" height="100" src="img/index_27.jpg" style="opacity: 1; transform: rotateY(0deg) translateZ(0px);" />
+        <img width="100" height="100" src="img/index_27.jpg" style="opacity: 1; transform: rotateY(0deg) translateZ(0px);" />
+        <img width="100" height="100" src="img/index_27.jpg" style="opacity: 1; transform: rotateY(0deg) translateZ(0px);" />
+    </div>
+
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript">
+/*
+$(function(){
+    $(".heartPic li").hover(function(){
+        $(this).addClass("on");
+        $(this).find("img").css({"width":"200px","height":"200px"});
+        $(this).find("div").css({"width":"200px","height":"200px"});
+        $(this).find(".pTxt").animate({"width":"200px","height":"20px"});
+        $(this).find(".pTxt").show();
+    },function(){
+        $(this).css({height:"100px"},100).removeClass("on");
+        $(this).find("img").stop(true,true).css({"width":"100px","height":"100px"});
+        $(this).find("div").stop(true,true).css({"width":"100px","height":"100px"});
+        $(this).find(".pTxt").stop(true,true).animate({"width":"0px","height":"0px"});
+    });
+});
+*/
+
+
+;$(function(){
+    //Creating 50 thumbnails inside .grid
+    //the images are stored on the server serially. So we can use a loop to generate the HTML.
+    //var images = "", count = 50;
+    //for(var i = 1; i <= count; i++)
+        //images += '<img src="images/'+i+'.jpg" />';
+        
+    //appending the images to .grid
+    //$(".grid").append(images);
+
+    var d = 0; //delay
+    var ry, tz, s; //transform params
+
+    //animation time
+    $(".animate").on("click", function(){
+        //fading out the thumbnails with style
+        $("img").each(function(){
+            d = Math.random()*1000; //1ms to 1000ms delay
+            $(this).delay(d).animate({opacity: 0}, {
+                step: function(n){
+                    s = 1-n; //scale - will animate from 0 to 1
+                    $(this).css("transform", "scale("+s+")");
+                }, 
+                duration: 1000, 
+            })
+        }).promise().done(function(){
+            //after *promising* and *doing* the fadeout animation we will bring the images back
+            storm();
+        })
+    })
+    //bringing back the images with style
+    function storm()
+    {
+        $("img").each(function(){
+            d = Math.random()*1000;
+            $(this).delay(d).animate({opacity: 1}, {
+                step: function(n){
+                    //rotating the images on the Y axis from 360deg to 0deg
+                    ry = (1-n)*360;
+                    //translating the images from 1000px to 0px
+                    tz = (1-n)*1000;
+                    /*if(tz>300){
+                        tz=300;
+                    }*/
+                    //applying the transformation
+                    $(this).css({
+                        "transform":"translateZ("+tz+"px)"
+                    });
+                    //$(this).css("transform", "rotateX("+ry+"deg) translateZ("+tz+"px)");
+                }, 
+                duration: 1000, 
+                //some easing fun. Comes from the jquery easing plugin.
+                easing: 'easeOutQuint', 
+            })
+        })
+    }
+});
+</script>
+
+</body>
+
+</html>
