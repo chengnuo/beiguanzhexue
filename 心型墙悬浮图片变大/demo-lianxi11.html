@@ -26,7 +26,6 @@
         width: 749px;
         height: 630px;
         margin: 60px auto 0 auto;
-
         perspective: 500px; /*For 3d*/
     }
     
@@ -71,6 +70,7 @@
 
     .heartPic ul li .in{
         opacity: 0;
+        opacity: 1\9\0;
         -webkit-transition: all 0.3s;
         -o-transition: all 0.3s;
         transition: all 0.3s;
@@ -205,12 +205,12 @@
        animation:.3s heartPicAnimate 2.7s forwards;
     }
 
-    
+
 
     
     @-webkit-keyframes heartPicAnimate{
         0%{ 
-            opacity: 0;
+            opacity: .1;
             -webkit-transform: translateZ(200px);
             -ms-transform: translateZ(200px);
             -o-transform: translateZ(200px);
@@ -229,7 +229,7 @@
     }
     @keyframes heartPicAnimate{
         0%{ 
-            opacity: 0;
+            opacity: .1;
             -webkit-transform: translateZ(200px);
             -ms-transform: translateZ(200px);
             -o-transform: translateZ(200px);
@@ -246,6 +246,7 @@
             transform: translateZ(0);
         }
     }
+
 
     /*
     @-webkit-keyframes heartPicBorderAnimate{
@@ -273,6 +274,7 @@
 
     </style>
 </head>
+
 
 <body>
     <div class="heartPic heartPicAnimate ">
