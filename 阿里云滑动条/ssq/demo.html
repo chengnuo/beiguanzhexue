@@ -311,8 +311,8 @@
 	;(function ($) { 
 	    $.fn.setSlider = function(options){ 
 	        var defaults = { 
-	            setClass:"active"
-	            setData:setData
+	            setClass:"active",
+	            setData:[]
 	        } 
 	        var options = $.extend(defaults, options); 
 	        this.each(function(index){ 
@@ -334,14 +334,14 @@
 					}
 				}
 				//点击的时候出发
-				function clickHandle(){
-					$(this).children(".indexP").show();
-					$(this).siblings().children(".indexP").hide();
+				function clickHandle(_this){
+					_this.children(".indexP").show();
+					_this.siblings().children(".indexP").hide();
 					$(thisSlider).find("li").removeClass(defaults.setClass);
-					$(thisSlider).find("li"+":lt("+($(this).index()+1)+")").addClass(defaults.setClass);
+					$(thisSlider).find("li"+":lt("+( _this.index()+1)+")").addClass(defaults.setClass);
 				}
 				$(thisSlider).find("li").on("click",function(){
-					clickHandle();
+					clickHandle( $(this) );
 				});
 	        }); 
 	    }; 
