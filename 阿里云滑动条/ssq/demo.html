@@ -312,7 +312,10 @@
 	    $.fn.setSlider = function(options){ 
 	        var defaults = { 
 	            setClass:"active",
-	            setData:[]
+	            setData:[{
+					date:"请填充数据",
+					buy:"请填充数据"
+				}]
 	        } 
 	        var options = $.extend(defaults, options); 
 	        this.each(function(index){ 
