@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滑块条</title>
+	<meta name="author" content="shishengqi" />
+	<style>
+		@charset="utf-8";
+		/*reset部分 start*/
+		*{padding:0;margin:0;}
+		html{font-family:"Microsoft Yahei",Arial,sans-serif;font-size: 12px;}
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,button,textarea,p,th,td{padding:0;margin:0;font-family:"Microsoft YaHei",sans-serif,Arial}
+		table{border-collapse:collapse;border-spacing:0}
+		fieldset,img{border:0}
+		a{text-decoration:none;color:#000;outline:none}
+		li{list-style:none;}
+		caption,th{text-align:left}
+		h1,h2,h3,h4,h5,h6{font-weight:normal;}
+		input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;outline:medium;}
+		input,button,textarea,select{*font-size:100%}
+		/*a{-webkit-transition:all 0.5s linear;-moz-transition:all 0.5s linear;-ms-transition:all 0.5s linear;-o-transition:all 0.5s linear}*/
+		.fl{float:left;}
+		.fr{float:right;}
+		.clear:after{
+		  display:block; 
+		  content:"clear"; 
+		  height:0; 
+		  clear:both; 
+		  overflow:hidden; 
+		  visibility:hidden;
+		}
+		.clear{zoom:1;}	
+		/*reset部分 end*/
+
+		.sliderBar{margin:100px 10px;width:1133px;border:1px solid #FFCC00;background: #F2F2F2;}
+		.sliderBar li{position: relative;float: left;width: 80px;height: 30px;line-height: 30px;border-right:1px solid #FFCC00;text-align: center;}
+		.sliderBar li:last-child{border:none;}
+		.sliderBar li.active{
+			background: #FCF8E3;
+		}
+		.sliderBar li.active2{
+			background: #cCF8E3;
+		}
+		.sliderBar li:hover{background: #FCF8E3;cursor: pointer;cursor: hand;}
+		.sliderBar li p{text-align: center;}
+		.indexP{display: none;position: absolute;left:50%;top:-53px;margin-left: -40px;width: 85px;height: 30px;line-height: 30px;border:1px solid #FFCC00;background: #FCF8E3;}
+		.sliderBar li:hover .indexP{/*display: block;*/}
+
+		.shanjiao-out{position:absolute;right:36px;width:0;height:0;border-width:8px;border-style:solid;border-color: #ffcc00 transparent transparent transparent;}
+		.shanjiao-inner{position:absolute;right:37px;width:0;height:0;border-width:7px;border-style:solid;border-color: #FCF8E3 transparent transparent transparent;}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+
+	<div>
+		<ul class="sliderBar clear" id="slider-index">
+			<li>
+				1
+				<div class="indexP">
+					<div>购买1个月</div>
+					<div class="shanjiao-out"></div>
+					<div class="shanjiao-inner"></div>
+				</div>
+				
+			</li>
+			<li>
+				2
+				<div class="indexP">
+					<div>购买2个月</div>
+					<div class="shanjiao-out"></div>
+					<div class="shanjiao-inner"></div>
+				</div>
+			</li>
+			<li>
+				3
+				<div class="indexP">
+					<div>购买3个月</div>
+					<div class="shanjiao-out"></div>
+					<div class="shanjiao-inner"></div>
+				</div>
+			</li>
+			<li>
+				4
+				<div class="indexP">
+					<div>购买4个月</div>
+					<div class="shanjiao-out"></div>
+					<div class="shanjiao-inner"></div>
+				</div>
+			</li>
+			<li>
+				5
+				<div class="indexP">
+					<div>购买5个月</div>
+					<div class="shanjiao-out"></div>
+					<div class="shanjiao-inner"></div>
+				</div>
+			</li>
+			<li>
+				6
+				<div class="indexP">
+					<div>购买6个月</div>
+					<div class="shanjiao-out"></div>
+					<div class="shanjiao-inner"></div>
+				</div>
+			</li>
+			<li>
+				7
+				<div class="indexP">
+					<div>购买7个月</div>
+					<div class="shanjiao-out"></div>
+					<div class="shanjiao-inner"></div>
+				</div>
+			</li>
+			<li>
+				8
+				<div class="indexP">
+					<div>购买8个月</div>
+					<div class="shanjiao-out"></div>
+					<div class="shanjiao-inner"></div>
+				</div>
+			</li>
+			<li>
+				9
+				<div class="indexP">
+					<div>购买9个月</div>
+					<div class="shanjiao-out"></div>
+					<div class="shanjiao-inner"></div>
+				</div>
+			</li>
+			<li>
+				10
+				<div class="indexP">
+					<div>购买10个月</div>
+					<div class="shanjiao-out"></div>
+					<div class="shanjiao-inner"></div>
+				</div>
+			</li>
+			<li>
+				11
+				<div class="indexP">
+					<div>购买11个月</div>
+					<div class="shanjiao-out"></div>
+					<div class="shanjiao-inner"></div>
+				</div>
+			</li>
+			<li>
+				1年
+				<div class="indexP">
+					<div>购买1年</div>
+					<div class="shanjiao-out"></div>
+					<div class="shanjiao-inner"></div>
+				</div>
+			</li>
+			<li>
+				2年
+				<div class="indexP">
+					<div>购买2年</div>
+					<div class="shanjiao-out"></div>
+					<div class="shanjiao-inner"></div>
+				</div>
+			</li>
+			<li>
+				3年
+				<div class="indexP">
+					<div>购买3年</div>
+					<div class="shanjiao-out"></div>
+					<div class="shanjiao-inner"></div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<!-- JS部分 -->	
+	<script>
+
+		/*var arOB = [];
+		var ULobj = $('#slider-index>li');
+		for(var i=0;i<ULobj.length;i++){
+			arOB.push(ULobj[i]);
+		}
+
+		function changeCS(ints){
+			for(var i=0;i<arOB.length;i++){
+
+				if( i <= ints ){
+					arOB[i].style.backgroundColor="#FCF8E3";
+				}else{
+					arOB[i].style.backgroundColor="#F2F2F2";
+				}
+				
+			}
+		}
+
+		$(function(){
+			$("#slider-index>li").each(function(){
+				$(this).click(function(){
+					$(this).children(".indexP").show();
+					$(this).siblings().children(".indexP").hide();
+					var number=$(this).index();
+					var $j=$("#slider-index>li").length;
+					changeCS(number);
+					// var li=new Array([$j]);
+					// for(k=0;k<$i.length;k++){
+					// 	alert(li[k]);
+					// }
+				})
+			})
+		})*/
+
+
+	/*(function ($) { 
+	    $.fn.setTableUI = function(options){ 
+	        var defaults = { 
+	            evenRowClass:"evenRow", 
+	            oddRowClass:"oddRow", 
+	            activeRowClass:"activeRow" 
+	        } 
+	        var options = $.extend(defaults, options); 
+	        this.each(function(){ 
+	            var thisTable=$(this); 
+	            $(thisTable).find("tr").bind("mouseover", function () { 
+	                $(this).css({ color: "#ff0011", background: "blue" }); 
+	            }); 
+	            $(thisTable).find("tr").bind("mouseout", function () { 
+	                $(this).css({ color: "#000000", background: "white" }); 
+	            }); 
+	        }); 
+	    }; 
+	})(jQuery); */
+	/*
+	$(function(){
+		$("#slider-index>li").each(function(index){
+			var _this = $(this);
+			_this.on("click",function(){
+				_this.children(".indexP").show();
+				_this.siblings().children(".indexP").hide();
+				$("#slider-index>li").removeClass("active");
+				$("#slider-index>li:lt("+(_this.index()+1)+")" ).addClass("active");
+			});
+		});
+	});
+	*/
+	;(function ($) { 
+	    $.fn.setSlider = function(options){ 
+	        var defaults = { 
+	            setClass:"active"
+	        } 
+	        var options = $.extend(defaults, options); 
+	        this.each(function(index){ 
+	            var thisSlider=$(this); 
+				$(thisSlider).find("li").on("click",function(){
+					$(this).children(".indexP").show();
+					$(this).siblings().children(".indexP").hide();
+					$(thisSlider).find("li").removeClass(defaults.setClass);
+					$(thisSlider).find("li"+":lt("+($(this).index()+1)+")").addClass(defaults.setClass);
+				});
+	        }); 
+	    }; 
+	})(jQuery);
+
+	$("#slider-index").setSlider({
+		setClass:"active2"
+	});
+	</script>
+</body>
+</html>
