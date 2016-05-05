@@ -312,43 +312,48 @@
 	    $.fn.setSlider = function(options){ 
 	        var defaults = { 
 	            setClass:"active"
+	            setData:setData
 	        } 
 	        var options = $.extend(defaults, options); 
 	        this.each(function(index){ 
-
-
-
 	            var thisSlider=$(this); 
-
 	            //渲染数据
-	            for(var i=0;i<sliderData.length;i++){
-		            $(thisSlider).append(
-						'<li>'+
-						'				'+sliderData[i].date+
-						'				<div class="indexP">'+
-						'					<div>'+sliderData[i].buy+'</div>'+
-						'					<div class="shanjiao-out"></div>'+
-						'					<div class="shanjiao-inner"></div>'+
-						'				</div>'+
-						'			</li>'
-					);
+	            loadDate()
+	            function loadDate(){
+		            for(var i=0;i<defaults.setData.length;i++){
+			            $(thisSlider).append(
+							'<li>'+
+							'				'+defaults.setData[i].date+
+							'				<div class="indexP">'+
+							'					<div>'+defaults.setData[i].buy+'</div>'+
+							'					<div class="shanjiao-out"></div>'+
+							'					<div class="shanjiao-inner"></div>'+
+							'				</div>'+
+							'			</li>'
+						);
+					}
 				}
-	            //点击的时候出发
-				$(thisSlider).find("li").on("click",function(){
+				//点击的时候出发
+				function clickHandle(){
 					$(this).children(".indexP").show();
 					$(this).siblings().children(".indexP").hide();
 					$(thisSlider).find("li").removeClass(defaults.setClass);
 					$(thisSlider).find("li"+":lt("+($(this).index()+1)+")").addClass(defaults.setClass);
+				}
+				$(thisSlider).find("li").on("click",function(){
+					clickHandle();
 				});
 	        }); 
 	    }; 
 	})(jQuery);
 
 	$("#slider-index").setSlider({
-		setClass:"active"
+		setClass:"active",
+		setData:sliderData
 	});
 	$("#slider-index2").setSlider({
-		setClass:"active2"
+		setClass:"active2",
+		setData:sliderData
 	});
 	</script>
 </body>
