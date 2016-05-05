@@ -35,10 +35,12 @@
 		.sliderBar{margin:100px 10px;width:1133px;border:1px solid #FFCC00;background: #F2F2F2;}
 		.sliderBar li{position: relative;float: left;width: 80px;height: 30px;line-height: 30px;border-right:1px solid #FFCC00;text-align: center;}
 		.sliderBar li:last-child{border:none;}
-		.sliderBar li.active{
+		.sliderBar li.active,
+		.sliderBar li.active:hover{
 			background: #FCF8E3;
 		}
-		.sliderBar li.active2{
+		.sliderBar li.active2,
+		.sliderBar li.active2:hover{
 			background: #cCF8E3;
 		}
 		.sliderBar li:hover{background: #FCF8E3;cursor: pointer;cursor: hand;}
@@ -53,8 +55,9 @@
 </head>
 <body>
 
-	<div>
+	<!-- <div>
 		<ul class="sliderBar clear" id="slider-index">
+	
 			<li>
 				1
 				<div class="indexP">
@@ -169,7 +172,14 @@
 				</div>
 			</li>
 		</ul>
-	</div>
+	</div> -->
+
+	
+	<ul class="sliderBar clear" id="slider-index">
+	</ul>
+	<ul class="sliderBar clear" id="slider-index2">
+	</ul>
+	
 
 	<!-- JS部分 -->	
 	<script>
@@ -241,6 +251,63 @@
 		});
 	});
 	*/
+	var sliderData = [
+	{
+		date:1,
+		buy:"购买1个月"
+	},
+	{
+		date:2,
+		buy:"购买2个月"
+	},
+	{
+		date:3,
+		buy:"购买3个月"
+	},
+	{
+		date:4,
+		buy:"购买4个月"
+	},
+	{
+		date:5,
+		buy:"购买5个月"
+	},
+	{
+		date:6,
+		buy:"购买6个月"
+	},
+	{
+		date:7,
+		buy:"购买7个月"
+	},
+	{
+		date:8,
+		buy:"购买8个月"
+	},
+	{
+		date:9,
+		buy:"购买9个月"
+	},
+	{
+		date:10,
+		buy:"购买10个月"
+	},
+	{
+		date:11,
+		buy:"购买11个月"
+	},
+	{
+		date:12,
+		buy:"购买1年"
+	},
+	{
+		date:24,
+		buy:"购买2年"
+	},
+	{
+		date:36,
+		buy:"购买3年"
+	}];
 	;(function ($) { 
 	    $.fn.setSlider = function(options){ 
 	        var defaults = { 
@@ -248,7 +315,25 @@
 	        } 
 	        var options = $.extend(defaults, options); 
 	        this.each(function(index){ 
+
+
+
 	            var thisSlider=$(this); 
+
+	            //渲染数据
+	            for(var i=0;i<sliderData.length;i++){
+		            $(thisSlider).append(
+						'<li>'+
+						'				'+sliderData[i].date+
+						'				<div class="indexP">'+
+						'					<div>'+sliderData[i].buy+'</div>'+
+						'					<div class="shanjiao-out"></div>'+
+						'					<div class="shanjiao-inner"></div>'+
+						'				</div>'+
+						'			</li>'
+					);
+				}
+	            //点击的时候出发
 				$(thisSlider).find("li").on("click",function(){
 					$(this).children(".indexP").show();
 					$(this).siblings().children(".indexP").hide();
@@ -260,6 +345,9 @@
 	})(jQuery);
 
 	$("#slider-index").setSlider({
+		setClass:"active"
+	});
+	$("#slider-index2").setSlider({
 		setClass:"active2"
 	});
 	</script>
