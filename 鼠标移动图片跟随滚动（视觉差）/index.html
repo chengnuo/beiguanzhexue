@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery制作3D banner图像鼠标移动图片跟随滚动</title>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.smart3d.js"></script>
+
+<style type="text/css">
+#mindscape {
+	width: 750px;
+	height: 174px;
+	overflow: hidden;
+}
+#monsteck_variketch {
+	width: 750px;
+	height: 200px;
+	overflow: hidden;
+}
+</style>
+
+<script type="text/javascript">
+$(function() {
+	$('#mindscape').smart3d(850);
+	$('#monsteck_variketch').smart3d(850);
+});
+</script>
+
+</head>
+<body>
+
+<div style="width:850px;margin:0 auto;">
+
+	<h3>Demo 1</h3>
+	<ul id="mindscape">
+		<li><img src="mindscape/mindscape1.png" /></li>
+		<li><img src="mindscape/mindscape2.png" /></li>
+	</ul>
+	
+	<h3>Demo 2</h3> 
+	<ul id="monsteck_variketch">
+		<li><img src="monsteck_variketch/1.png" /></li>
+		<li><img src="monsteck_variketch/2.png" /></li>
+	</ul>
+
+</div>
+
+</body>
+</html>
